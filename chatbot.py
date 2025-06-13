@@ -122,7 +122,7 @@ class GroqChatbot:
 
     def create_session(self, session_id):
         if session_id not in self.store:
-            self.create_session(session_id)
+            self.store[session_id] = InMemoryChatMessageHistory()
         self.current_session_id = session_id
         return f"Switched to session: {session_id}"
 
